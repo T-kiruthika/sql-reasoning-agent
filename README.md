@@ -1,4 +1,4 @@
-# 🧠 DatabaseBot — Agentic NL2SQL Database Assistant
+# SQLReasoning Agent (Agentic NL2SQL Database Assistant)
 
 **DatabaseBot** is a sophisticated, interactive **Desktop AI Agent** that bridges the gap between natural language and complex relational databases. It allows users to query any SQL database through plain English—autonomously generating, validating, and executing SQL code without requiring technical expertise.
 
