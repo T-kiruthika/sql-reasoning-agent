@@ -17,7 +17,7 @@ server_app.config["SESSION_PERMANENT"] = False
 Session(server_app)
 
 try:
-    EMBEDDED_API_KEY = "Paste your key here "
+    EMBEDDED_API_KEY = "paste your cohere key "
 
     co = cohere.Client(EMBEDDED_API_KEY)
     LLM_CONFIGURED = True
@@ -31,7 +31,6 @@ def get_llm_response(prompt_text):
     if not LLM_CONFIGURED:
         raise Exception("Cohere client is not initialized. Check console for errors.")
     response = co.chat(
-        model='command-r',
         message=prompt_text,
         temperature=0.1
     )
@@ -129,6 +128,7 @@ SQL GENERATION RULES:
 7.  Standard SQL: For all other requests, generate appropriate, standard SQL.
 Database Schema: {db_schema}
 User's Question: "{user_question}"
+CRITICAL FINAL INSTRUCTION: Your ONLY output must be a single SQL query wrapped in backticks like this: ```sql SELECT ... ```. DO NOT INCLUDE ANY OTHER TEXT OR EXPLANATIONS.
 Your Output (must be only the single, correct SQL query in a sql ...  block):
 """
     if not LLM_CONFIGURED:
