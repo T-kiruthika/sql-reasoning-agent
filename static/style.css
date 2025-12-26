@@ -30,11 +30,9 @@ overflow: hidden;
 transition: background-color 0.3s, color 0.3s;
 }
 
-/* --- THEME DEFINITIONS --- */
 body.dark-mode { background-color: var(--chat-bg-dark); color: var(--text-color-dark); }
 body.light-mode { background-color: var(--chat-bg-light); color: var(--text-color-light); }
 
-/* --- Main Layout & Sidebar --- */
 .container { display: flex; width: 100%; height: 100%; }
 .sidebar { width: 320px; padding: 2rem; display: flex; flex-direction: column; transition: background-color 0.3s, border-color 0.3s; }
 body.dark-mode .sidebar { background-color: var(--sidebar-bg-dark); border-right: 1px solid var(--border-color-dark); }
@@ -46,7 +44,6 @@ body.light-mode .sidebar p { color: #555; }
 #open-modal-btn { padding: 0.9rem; border: none; border-radius: 8px; background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end)); color: white; font-weight: bold; cursor: pointer; transition: all 0.3s ease; }
 #open-modal-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(138, 43, 226, 0.3); }
 
-/* --- DEFINITIVE CHAT LAYOUT --- */
 .chat-wrapper { flex: 1; display: flex; flex-direction: column; height: 100vh; min-width: 0; }
 main#chat-box { flex: 1; padding: 2rem; overflow-y: auto; display: flex; flex-direction: column; gap: 1.5rem; }
 .chat-input-area { padding: 1rem; border-top: 1px solid; transition: border-color 0.3s; position: relative; }
@@ -59,14 +56,12 @@ body.light-mode #user-input { background-color: var(--input-bg-light); color: va
 #send-btn { margin-left: 1rem; background-color: var(--primary-color); border: none; color: white; font-size: 1.5rem; height: 50px; width: 50px; border-radius: 50%; cursor: pointer; }
 #send-btn:disabled { background-color: #555; cursor: not-allowed; }
 
-/* Message Bubbles */
 .message { position: relative; max-width: 95%; padding: 1rem 1.5rem; border-radius: 18px; line-height: 1.6; word-wrap: break-word; }
 .user-message { background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end)); color: white; align-self: flex-end; border-bottom-right-radius: 4px; }
 .bot-message { align-self: flex-start; border-bottom-left-radius: 4px; width: 100%; box-sizing: border-box; transition: background-color 0.3s; }
 body.dark-mode .bot-message { background-color: var(--input-bg-dark); }
 body.light-mode .bot-message { background-color: #e9e9eb; }
 
-/* --- NEW: Copy Button Styles --- */
 .copy-btn {
     position: absolute;
     top: 10px;
@@ -87,7 +82,6 @@ body.light-mode .bot-message { background-color: #e9e9eb; }
     background: rgba(0,0,0,0.4);
 }
 
-/* --- DEFINITIVE POLISHED MODAL STYLES --- */
 .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); backdrop-filter: blur(8px); align-items: center; justify-content: center; }
 .modal-content { padding: 2.5rem 3rem; border-radius: 16px; width: 90%; max-width: 400px; position: relative; box-shadow: 0 15px 40px rgba(0,0,0,0.5); border: 1px solid rgba(255, 255, 255, 0.1); transition: background-color 0.3s; }
 body.dark-mode .modal-content { background-color: var(--modal-bg-dark); }
@@ -97,7 +91,6 @@ body.light-mode .modal-content { background-color: var(--modal-bg-light); }
 #db-connection-form { display: flex; flex-direction: column; gap: 1.1rem; }
 #db-connection-form input, #db-connection-form select { width: 100%; padding: 0.9rem 1rem; box-sizing: border-box; border-radius: 8px; font-size: 0.9rem; -webkit-appearance: none; -moz-appearance: none; appearance: none; transition: background-color 0.2s, color 0.2s, border-color 0.2s; }
 
-/* --- NEW: Suggestion Box Styles --- */
 .suggestion-container {
     position: relative;
 }
@@ -120,14 +113,11 @@ body.light-mode .suggestion-box { background-color: var(--input-bg-light); borde
 body.dark-mode .suggestion-box div:hover { background-color: var(--primary-color); }
 body.light-mode .suggestion-box div:hover { background-color: var(--primary-color); color: white; }
 
-/* --- Specific positioning for query suggestions --- */
 #query-suggestions {
     bottom: 100%;
     margin-bottom: 5px;
 }
 
-
-/* DARK MODE INPUT STYLES (THE DEFINITIVE FIX) */
 body.dark-mode #db-connection-form input,
 body.dark-mode #db-connection-form select {
 background-color: #2b2b2b;
@@ -141,7 +131,6 @@ color: var(--input-focus-text-dark);
 border-color: var(--input-focus-bg-dark);
 }
 
-/* LIGHT MODE INPUT STYLES (THE DEFINITIVE FIX) */
 body.light-mode #db-connection-form input,
 body.light-mode #db-connection-form select {
 background-color: #f0f0f0;
@@ -161,8 +150,7 @@ body.light-mode #db-connection-form select { background-image: url('data:image/s
 #connect-btn:hover { box-shadow: 0 0 20px rgba(138, 43, 226, 0.4); }
 #connection-status { height: 20px; margin-top: 1rem; font-size: 0.9rem; text-align: center; }
 
-/* --- Scrollable HTML Table (DEFINITIVE) --- */
-.table-container { max-height: 50vh; overflow: auto; /* Both vertical and horizontal */ border-radius: 8px; }
+.table-container { max-height: 50vh; overflow: auto;  border-radius: 8px; }
 body.dark-mode .table-container { border: 1px solid var(--border-color-dark); }
 body.light-mode .table-container { border: 1px solid var(--border-color-light); }
 .bot-message table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
@@ -175,7 +163,6 @@ body.light-mode .bot-message thead th { background-color: #e9e9eb; }
 body.dark-mode .bot-message tbody tr:hover { background-color: var(--primary-color); color: white; }
 body.light-mode .bot-message tbody tr:hover { background-color: var(--primary-color); color: white; }
 
-/* --- DEFINITIVE DARK MODE SLIDER TOGGLE --- */
 .dark-mode-toggle { margin-top: auto; display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid; transition: border-color 0.3s; font-size: 0.9rem; }
 body.dark-mode .dark-mode-toggle { border-top-color: var(--border-color-dark); }
 body.light-mode .dark-mode-toggle { border-top-color: var(--border-color-light); }
